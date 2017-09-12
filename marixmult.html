@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript title</h2>
+
+<p>Please input a numbers</p>
+
+<input id="numb11" type="number"  value="4" >
+<input id="numb21" type="number"  value="-2" >
+<input id="numb31" type="number"  value="3" >
+<input id="numb41" type="number"  value="1" > </br>
+
+<input id="numb12" type="number"  value="-2" >
+<input id="numb22" type="number"  value="3" >
+<input id="numb32" type="number"  value="1" >
+<input id="numb42" type="number"  value="8" > </br>
+
+<input id="numb13" type="number"  value="3" >
+<input id="numb23" type="number"  value="1" >
+<input id="numb33" type="number"  value="5" >
+<input id="numb43" type="number"  value="4" > </br>
+
+<input id="numb14" type="number"  value="1" >
+<input id="numb24" type="number"  value="8" >
+<input id="numb34" type="number"  value="4" >
+<input id="numb44" type="number"  value="5" > </br>
+
+<button type="button" onclick="myFunction()">oblicz:</button>
+
+<p id="demo1"></p>
+
+<p>pierwiastek alfa:</p>
+<p id="demo2"></p>
+
+<p>beta:</p>
+<p id="demo3"></p>
+
+<p>U1:</p>
+<p id="demo4"></p>
+
+<p>T1:</p>
+<p id="demo5"></p>
+
+<p>T1*A1:</p>
+<p id="demo6"></p>
+
+<p>A2:</p>
+<p id="demo7"></p>
+
+<p> alfa2:</p>
+<p id="demo8"></p>
+
+<p>beta2:</p>
+<p id="demo9"></p>
+
+<p>U2:</p>
+<p id="demo10"></p>
+
+<p>T2:</p>
+<p id="demo11"></p>
+
+<p>T2*A2:</p>
+<p id="demo12"></p>
+
+<p>A3:</p>
+<p id="demo13"></p>
+
+<script>
+function myFunction() {
+    var x11,x12,x13,x14;
+    var x21,x22,x23,x24;
+    var x31,x32,x33,x34;
+    var x41,x42,x43,x44;
+    var alfa1,beta1,b1;
+    var u1,u2,u3;
+    var t11,t12,t13,t14;
+    var t21,t22,t23,t24;
+    var t31,t32,t33,t34;
+    var t41,t42,t43,t44;
+    var xx11,xx12,xx13,xx14;
+    var xx21,xx22,xx23,xx24;
+    var xx31,xx32,xx33,xx34;
+    var xx41,xx42,xx43,xx44;
+
+    // Get the value of the input field with id="numb"
+
+    x11 =Number(document.getElementById("numb11").value);
+    x12 =Number(document.getElementById("numb12").value);
+    x13 =Number(document.getElementById("numb13").value);
+    x14 =Number(document.getElementById("numb14").value);
+     
+    x21 =Number(document.getElementById("numb21").value);
+    x22 =Number(document.getElementById("numb22").value);
+    x23 =Number(document.getElementById("numb23").value);
+    x24 =Number(document.getElementById("numb24").value);
+
+    x31 =Number(document.getElementById("numb31").value);
+    x32 =Number(document.getElementById("numb32").value);
+    x33 =Number(document.getElementById("numb33").value);
+    x34 =Number(document.getElementById("numb34").value);
+
+    x41 =Number(document.getElementById("numb41").value);
+    x42 =Number(document.getElementById("numb42").value);
+    x43 =Number(document.getElementById("numb43").value);
+    x44 =Number(document.getElementById("numb44").value); 
+
+    document.getElementById("demo1").innerHTML = 
+    x11 + "    " + x21 + "    " + x31 + "    " + x41 + "<br>" +
+    x12 + "    " + x22 + "    " + x32 + "    " + x42 + "<br>" +
+    x13 + "    " + x23 + "    " + x33 + "    " + x43 + "<br>" +
+    x14 + "    " + x24 + "    " + x34 + "    " + x44 + "<br>" ;
+
+    alfa1=Math.sqrt(x12*x12  + x13*x13 + x14*x14)
+    document.getElementById("demo2").innerHTML = 
+     alfa1;
+    
+    beta1=1/((alfa1*(alfa1+Math.abs(x12))));
+    document.getElementById("demo3").innerHTML = 
+    beta1;
+
+    b1=Number(beta1);
+   if (x12>0) {
+        ee = 1;
+    } else {
+        ee=-1;
+    }
+    u1=Number((alfa1+Math.abs(x12))*ee);
+    u2=Number(x13);
+    u3=Number(x14);
+    document.getElementById("demo4").innerHTML = 
+    u1 + "<br>"+
+    u2 + "<br>"+
+    u3 ;
+    
+    t11 =Number(1);
+    t12 =Number(0);
+    t13 =Number(0);
+    t14 =Number(0);
+     
+    t21 =Number(0);
+    t22 =Number(1-(u1*u1*b1));
+    t23 =Number(-u2*u1*b1);
+    t24 =Number(-u3*u1*b1);
+
+    t31 =Number(0);
+    t32 =Number(-u1*u2*b1);
+    t33 =Number(1-(u2*u2*b1));
+    t34 =Number(-u2*u3*b1);
+
+    t41 =Number(0);
+    t42 =Number(-u1*u3*b1);
+    t43 =Number(-u2*u3*b1);
+    t44 =Number(1-(u3*u3*b1)); 
+
+    document.getElementById("demo5").innerHTML = 
+    t11 + "    " + t21 + "    " + t31 + "   " + t41 + "<br>" +
+    t12 + "    " + t22 + "    " + t32 + "   " + t42 + "<br>" +
+    t13 + "    " + t23 + "    " + t33 + "   " + t43 + "<br>" +
+    t14 + "    " + t24 + "    " + t34 + "   " + t44 + "<br>" ;
+
+    xx11 =Number(t11*x11+t21*x12+t31*x13+t41*x14);
+    xx12 =Number(t12*x11+t22*x12+t32*x13+t42*x14);
+    xx13 =Number(t13*x11+t23*x12+t33*x13+t43*x14);
+    xx14 =Number(t14*x11+t24*x12+t34*x13+t44*x14);
+     
+    xx21 =Number(t11*x21+t21*x22+t31*x23+t41*x24);
+    xx22 =Number(t12*x21+t22*x22+t32*x23+t42*x24);
+    xx23 =Number(t13*x21+t23*x22+t33*x23+t43*x24);
+    xx24 =Number(t14*x21+t24*x22+t34*x23+t44*x24);
+
+    xx31 =Number(t11*x31+t21*x32+t31*x33+t41*x34);
+    xx32 =Number(t12*x31+t22*x32+t32*x33+t42*x34);
+    xx33 =Number(t13*x31+t23*x32+t33*x33+t43*x34);
+    xx34 =Number(t14*x31+t24*x32+t34*x33+t44*x34);
+
+    xx41 =Number(t11*x41+t21*x42+t31*x43+t41*x44);
+    xx42 =Number(t12*x41+t22*x42+t32*x43+t42*x44);
+    xx43 =Number(t13*x41+t23*x42+t33*x43+t43*x44);
+    xx44 =Number(t14*x41+t24*x42+t34*x43+t44*x44);
+
+    document.getElementById("demo6").innerHTML = 
+    xx11 + "   " + xx21 + "   " + xx31 + "    " + xx41 + "<br>" +
+    xx12 + "   " + xx22 + "   " + xx32 + "    " + xx42 + "<br>" +
+    xx13 + "   " + xx23 + "   " + xx33 + "    " + xx43 + "<br>" +
+    xx14 + "   " + xx24 + "   " + xx34 + "    " + xx44 + "<br>" ;
+
+    x11 =Number(xx11*t11+xx21*t12+xx31*t13+xx41*t14);
+    x12 =Number(xx12*t11+xx22*t12+xx32*t13+xx42*t14);
+    x13 =Number(xx13*t11+xx23*t12+xx33*t13+xx43*t14);
+    x14 =Number(xx14*t11+xx24*t12+xx34*t13+xx44*t14);
+     
+    x21 =Number(xx11*t21+xx21*t22+xx31*t23+xx41*t24);
+    x22 =Number(xx12*t21+xx22*t22+xx32*t23+xx42*t24);
+    x23 =Number(xx13*t21+xx23*t22+xx33*t23+xx43*t24);
+    x24 =Number(xx14*t21+xx24*t22+xx34*t23+xx44*t24);
+
+    x31 =Number(xx11*t31+xx21*t32+xx31*t33+xx41*t34);
+    x32 =Number(xx12*t31+xx22*t32+xx32*t33+xx42*t34);
+    x33 =Number(xx13*t31+xx23*t32+xx33*t33+xx43*t34);
+    x34 =Number(xx14*t31+xx24*t32+xx34*t33+xx44*t34);
+
+    x41 =Number(xx11*t41+xx21*t42+xx31*t43+xx41*t44);
+    x42 =Number(xx12*t41+xx22*t42+xx32*t43+xx42*t44);
+    x43 =Number(xx13*t41+xx23*t42+xx33*t43+xx43*t44);
+    x44 =Number(xx14*t41+xx24*t42+xx34*t43+xx44*t44);
+
+
+    document.getElementById("demo7").innerHTML = 
+    x11 + "    " + x21 + "    " + x31 + "    " + x41 + "<br>" +
+    x12 + "    " + x22 + "    " + x32 + "    " + x42 + "<br>" +
+    x13 + "    " + x23 + "    " + x33 + "    " + x43 + "<br>" +
+    x14 + "    " + x24 + "    " + x34 + "    " + x44 + "<br>" ;
+
+    alfa1=Math.sqrt(x23*x23  + x24*x24)
+    document.getElementById("demo8").innerHTML = 
+    alfa1;
+
+    beta1=1/((alfa1*(alfa1+Math.abs(x23))));
+    document.getElementById("demo9").innerHTML = 
+    beta1;
+
+    b1=Number(beta1);
+   if (x23>0) {
+        ee = 1;
+    } else {
+        ee=-1;
+    }
+    u1=Number((alfa1+Math.abs(x23))*ee);
+    u2=Number(x24);
+    
+    document.getElementById("demo10").innerHTML = 
+    u1 + "<br>"+    u2  ;
+
+    t11 =Number(1);
+    t12 =Number(0);
+    t13 =Number(0);
+    t14 =Number(0);
+     
+    t21 =Number(0);
+    t22 =Number(1);
+    t23 =Number(0);
+    t24 =Number(0);
+
+    t31 =Number(0);
+    t32 =Number(0);
+    t33 =Number(1-(u1*u1*b1));
+    t34 =Number(-u1*u2*b1);
+
+    t41 =Number(0);
+    t42 =Number(0);
+    t43 =Number(-u1*u2*b1);
+    t44 =Number(1-(u2*u2*b1)); 
+
+    document.getElementById("demo11").innerHTML = 
+    t11 + "    " + t21 + "    " + t31 + "   " + t41 + "<br>" +
+    t12 + "    " + t22 + "    " + t32 + "   " + t42 + "<br>" +
+    t13 + "    " + t23 + "    " + t33 + "   " + t43 + "<br>" +
+    t14 + "    " + t24 + "    " + t34 + "   " + t44 + "<br>" ;
+
+    xx11 =Number(t11*x11+t21*x12+t31*x13+t41*x14);
+    xx12 =Number(t12*x11+t22*x12+t32*x13+t42*x14);
+    xx13 =Number(t13*x11+t23*x12+t33*x13+t43*x14);
+    xx14 =Number(t14*x11+t24*x12+t34*x13+t44*x14);
+     
+    xx21 =Number(t11*x21+t21*x22+t31*x23+t41*x24);
+    xx22 =Number(t12*x21+t22*x22+t32*x23+t42*x24);
+    xx23 =Number(t13*x21+t23*x22+t33*x23+t43*x24);
+    xx24 =Number(t14*x21+t24*x22+t34*x23+t44*x24);
+
+    xx31 =Number(t11*x31+t21*x32+t31*x33+t41*x34);
+    xx32 =Number(t12*x31+t22*x32+t32*x33+t42*x34);
+    xx33 =Number(t13*x31+t23*x32+t33*x33+t43*x34);
+    xx34 =Number(t14*x31+t24*x32+t34*x33+t44*x34);
+
+    xx41 =Number(t11*x41+t21*x42+t31*x43+t41*x44);
+    xx42 =Number(t12*x41+t22*x42+t32*x43+t42*x44);
+    xx43 =Number(t13*x41+t23*x42+t33*x43+t43*x44);
+    xx44 =Number(t14*x41+t24*x42+t34*x43+t44*x44);
+
+    document.getElementById("demo12").innerHTML = 
+    xx11 + "   " + xx21 + "   " + xx31 + "    " + xx41 + "<br>" +
+    xx12 + "   " + xx22 + "   " + xx32 + "    " + xx42 + "<br>" +
+    xx13 + "   " + xx23 + "   " + xx33 + "    " + xx43 + "<br>" +
+    xx14 + "   " + xx24 + "   " + xx34 + "    " + xx44 + "<br>" ;
+
+    x11 =Number(xx11*t11+xx21*t12+xx31*t13+xx41*t14);
+    x12 =Number(xx12*t11+xx22*t12+xx32*t13+xx42*t14);
+    x13 =Number(xx13*t11+xx23*t12+xx33*t13+xx43*t14);
+    x14 =Number(xx14*t11+xx24*t12+xx34*t13+xx44*t14);
+     
+    x21 =Number(xx11*t21+xx21*t22+xx31*t23+xx41*t24);
+    x22 =Number(xx12*t21+xx22*t22+xx32*t23+xx42*t24);
+    x23 =Number(xx13*t21+xx23*t22+xx33*t23+xx43*t24);
+    x24 =Number(xx14*t21+xx24*t22+xx34*t23+xx44*t24);
+
+    x31 =Number(xx11*t31+xx21*t32+xx31*t33+xx41*t34);
+    x32 =Number(xx12*t31+xx22*t32+xx32*t33+xx42*t34);
+    x33 =Number(xx13*t31+xx23*t32+xx33*t33+xx43*t34);
+    x34 =Number(xx14*t31+xx24*t32+xx34*t33+xx44*t34);
+
+    x41 =Number(xx11*t41+xx21*t42+xx31*t43+xx41*t44);
+    x42 =Number(xx12*t41+xx22*t42+xx32*t43+xx42*t44);
+    x43 =Number(xx13*t41+xx23*t42+xx33*t43+xx43*t44);
+    x44 =Number(xx14*t41+xx24*t42+xx34*t43+xx44*t44);
+
+
+    document.getElementById("demo13").innerHTML = 
+    x11 + "    " + x21 + "    " + x31 + "    " + x41 + "<br>" +
+    x12 + "    " + x22 + "    " + x32 + "    " + x42 + "<br>" +
+    x13 + "    " + x23 + "    " + x33 + "    " + x43 + "<br>" +
+    x14 + "    " + x24 + "    " + x34 + "    " + x44 + "<br>" ;
+}
+
+</script>
+
+</body>
+</html> 
